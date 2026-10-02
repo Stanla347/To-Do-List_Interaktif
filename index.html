@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi To-Do List Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="Container">
+        <header class="MainHeader">
+            <span class="Badge">Tugas Mandiri <br>Sultan Maulana Akbar <br> NIM.2501304</span>
+            <h1 id="JudulUtama">To-Do List Interaktif</h1>
+            <p id="SubJudul">Aplikasi pencatatan tugas dinamis dengan JavaScript DOM</p>
+        </header>
+
+        <main class="Card">
+            <!-- Input dan Tombol Tambah -->
+            <div class="InputWrapper">
+                <input type="text" id="TugasInput" placeholder="Ketik tugas baru di sini..." autocomplete="off">
+                <button id="BtnTambah" class="Btn BtnSuccess">+ Tambah</button>
+            </div>
+
+            <!-- Panel Statistik -->
+            <div class="StatsPanel">
+                <p>Total Tugas: <span id="TotalTugas">0</span></p>
+                <p>Selesai: <span id="TugasSelesai">0</span></p>
+                <p>Belum Selesai: <span id="TugasBelumSelesai">0</span></p>
+            </div>
+
+            <div class="ListContainer">
+                <h3>Daftar Tugas:</h3>
+                <ul id="DaftarTugas" class="NoteList">
+                    <!-- Elemen li akan ditambahkan secara dinamis via JavaScript -->
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- Menghubungkan logika JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

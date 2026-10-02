@@ -1,0 +1,47 @@
+:root {
+    --primary-color: #4f46e5;
+    --success-color: #10b981;
+    --success-hover: #059669;
+    --danger-color: #ef4444;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body { background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; padding: 2rem 1rem; }
+
+.Container { max-width: 600px; margin: 0 auto; }
+
+.MainHeader { text-align: center; margin-bottom: 2rem; }
+.Badge { display: inline-block; background-color: #e0e7ff; color: var(--primary-color); font-size: 0.85rem; font-weight: 600; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 0.75rem; }
+.MainHeader h1 { font-size: 2rem; font-weight: 700; color: var(--text-dark); }
+.MainHeader p { color: var(--text-muted); font-size: 1rem; }
+
+.Card { background-color: var(--card-bg); border-radius: var(--radius); padding: 1.75rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid var(--border-color); }
+
+.InputWrapper { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+.InputWrapper input { flex: 1; padding: 0.65rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.95rem; outline: none; }
+.InputWrapper input:focus { border-color: var(--primary-color); }
+
+.Btn { padding: 0.65rem 1.2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.BtnSuccess { background-color: var(--success-color); color: white; }
+.BtnSuccess:hover { background-color: var(--success-hover); }
+
+/* Class yang direvisi sesuai instruksi */
+.StatsPanel { display: flex; justify-content: space-between; background-color: #f1f5f9; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-weight: 600; font-size: 0.9rem; }
+.StatsPanel span { color: var(--primary-color); }
+
+.NoteList { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.NoteItem { background-color: #f8fafc; border: 1px solid var(--border-color); padding: 0.75rem 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+
+/* Class untuk menandai tugas selesai */
+.Completed { text-decoration: line-through; color: var(--text-muted); cursor: pointer; transition: 0.2s; }
+.TeksTugas { cursor: pointer; flex: 1; }
+
+.BtnHapus { background-color: #fee2e2; color: var(--danger-color); border: none; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
+.BtnHapus:hover { background-color: #fca5a5; }
