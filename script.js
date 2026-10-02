@@ -1,18 +1,18 @@
-// 1. Seleksi Elemen Utama
+// 1. Seleksi Elemen 
 const inputTugas = document.getElementById("TugasInput");
 const btnTambah = document.getElementById("BtnTambah");
 const daftarTugas = document.getElementById("DaftarTugas");
 
-// Seleksi Elemen Statistik
+// Seleksi Elemen buat status/statistiknya
 const totalTugasEl = document.getElementById("TotalTugas");
 const tugasSelesaiEl = document.getElementById("TugasSelesai");
 const tugasBelumSelesaiEl = document.getElementById("TugasBelumSelesai");
 
-// 2. Variabel Penampung Angka Statistik
+// 2. masukan variabelnya
 let totalTugas = 0;
 let tugasSelesai = 0;
 
-// Fungsi untuk memperbarui tampilan angka statistik di layar secara otomatis
+// fungsi untuk memperbarui status
 function perbaruiStatistik() {
     totalTugasEl.innerText = totalTugas;
     tugasSelesaiEl.innerText = tugasSelesai;
@@ -21,29 +21,29 @@ function perbaruiStatistik() {
 
 // 3. Fungsi Utama Logika Tambah Tugas
 function tambahTugas() {
-    // Mengambil teks dan menghapus spasi di awal/akhir
+    // Mambil teks dan menghapus spasi di awal/akhir
     const isiTeks = inputTugas.value.trim();
 
-    // Validasi input kosong
+    // Validasi input kalau kosong
     if (isiTeks === "") {
         alert("Peringatan: Catatan tugas tidak boleh kosong!");
         return; 
     }
 
-    // Membuat elemen HTML <li> baru secara dinamis di memori
+    // Membuat elemen HTML <li> baru 
     const liBaru = document.createElement("li");
     liBaru.className = "NoteItem";
     
     // Mengisi struktur di dalam <li> dengan teks catatan dan tombol hapus
     liBaru.innerHTML = `<span class="TeksTugas">${isiTeks}</span> <button class="BtnHapus">Hapus</button>`;
 
-    // --- FITUR CORET (TUGAS SELESAI) ---
+    // Fitur coret untuk tugas selsai
     const elemenTeks = liBaru.querySelector(".TeksTugas");
     elemenTeks.addEventListener("click", function() {
         // Menggunakan toggle untuk mode saklar ON/OFF class "Completed"
         elemenTeks.classList.toggle("Completed");
         
-        // Cek apakah sekarang elemen memiliki class "Completed" untuk update statistik
+        // Cek apakah sekarang elemen memiliki class "Completed" untuk update status
         if (elemenTeks.classList.contains("Completed")) {
             tugasSelesai++;
         } else {
@@ -52,7 +52,7 @@ function tambahTugas() {
         perbaruiStatistik();
     });
 
-    // --- FITUR HAPUS ---
+    // fitur hapus
     const btnHapus = liBaru.querySelector(".BtnHapus");
     btnHapus.addEventListener("click", function() {
         // Jika tugas yang dihapus statusnya sudah selesai, kurangi counter tugas selesai
@@ -71,7 +71,7 @@ function tambahTugas() {
     // Mengosongkan kembali isi kolom input agar siap diketik lagi
     inputTugas.value = "";
 
-    // Tambah nilai total catatan dan perbarui layar statistik
+    // Tambah nilai total catatan dan perbarui layar status
     totalTugas++;
     perbaruiStatistik();
 }
